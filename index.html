@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas-Dev</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+    <div id="spotlight"></div>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="/images/logo2.png" alt="Logo Dev">
+                </a>
+            </div><!--Logo-->
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Especialidades</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="#">
+                    <button>Contato</button>
+                </a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <a href="#">
+                    <img src="icons/abrir.svg" alt="Abrir Menu">
+                </a>
+            </div>
+
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <a href="#">
+                        <img src="icons/fechar.svg" alt="Fechar menu">
+                    </a>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Especialidades</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Projetos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--Interface-->
+    </header>
+
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+
+                    <div class="txt-topo-site">
+                        <h1>Lucas Lino</h1>
+                        <h3>Engenheiro Backend</h3>
+                        <p>"Eu desenvolvo sistemas robustos focados em desempenho, segurança e integração perfeita."</p>
+
+                        <div class="cv-wrapper">
+                            <button onclick="toggleOptions()" class="btn-cv-main">
+                                <img src="icons/download.svg" width="20" height="20" alt="Download">
+                                Download CV
+                            </button>
+
+                            <div id="cv-options" class="cv-options hidden">
+                                <a href="documents/Lucas_Lino_CV_Portugues 2 (2).pdf" download class="btn-cv"
+                                    onclick="closeOptions()">
+                                    <img src="icons/br.svg" width="20" height="20" alt="BR"> PT-BR
+                                </a>
+                                <a href="documents/Lucas_Lino_CV_Ingles 2 (1).pdf" download class="btn-cv"
+                                    onclick="closeOptions()">
+                                    <img src="icons/us.svg" width="20" height="20" alt="EN"> EN
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div><!--txt-topo-site-->
+
+                    <div class="img-topo-site">
+                        <img src="images/eu.png" alt="">
+                    </div><!--img-topo-site-->
+
+                </div><!--Flex-->
+            </div><!--Interface-->
+        </section><!--topo-do-site-->
+
+        <section class="especialidades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <img src="icons/JAVA.svg" alt="java" width="50">
+                        <h3>Java</h3>
+                        <p>"Desenvolvo aplicações backend robustas com Java, aplicando princípios de orientação a
+                            objetos, estruturas de dados eficientes e boas práticas de arquitetura de software."</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <img src="icons/SPRING.svg" alt="java" width="50">
+                        <h3>Spring Boot</h3>
+                        <p>"Utilizo o Spring Boot para construir APIs REST escaláveis e seguras, com integração a bancos
+                            de dados, injeção de dependência e controle de rotas de forma modular e produtiva."</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <img src="icons/AWS.svg" alt="java" width="50">
+                        <h3>AWS</h3>
+                        <p>Tenho experiência em serviços da AWS como EC2, S3 e RDS, utilizando a nuvem para deploy de
+                            aplicações, armazenamento seguro e escalabilidade de sistemas."</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especialidades-->
+
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/foto.png" alt="foto">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU LUCAS LINO.<span></h2>
+                        <p>Sou um desenvolvedor backend apaixonado por transformar ideias em soluções funcionais. Tenho
+                            experiência com Java, Spring Boot e AWS, sempre focando na performance, segurança e
+                            escalabilidade das aplicações que construo. Valorizo boas práticas de código, versionamento
+                            com Git e integração com bancos de dados relacionais.
+                        </p>
+                        <p>Além da tecnologia, gosto de aprender constantemente e encarar novos desafios. Já participei
+                            de projetos pessoais, voluntários e acadêmicos, o que fortaleceu minha habilidade de
+                            trabalhar em equipe e resolver problemas do mundo real. Busco oportunidades onde eu possa
+                            crescer como profissional e contribuir com impacto.
+                        </p>
+
+                        <div class="btn-social">
+                            <a href="https://github.com/llucashenrique" target="_blank"> <img
+                                    src="icons/github-mark-white.png" alt="github" width="35"></a>
+                            <a href="https://www.linkedin.com/in/lucas-linoo/" target="_blank"><img
+                                    src="icons/linkedin.svg" alt="linkedin" width="45"></a>
+                            <a href="https://www.youtube.com/@Lucas-uv8wi" target="_blank"><img src="icons/youtube.svg"
+                                    alt="youtube" width="40"></a>
+                        </div>
+                    </div><!--txt-sobre-->
+                </div><!--sobre-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <section class="experiencia-projetos">
+            <div class="interface flex-layout">
+
+                <!-- EXPERIÊNCIA -->
+                <div class="experiencia">
+                    <h2 class="titulo">EXPERIÊNCIA</h2>
+
+                    <div class="exp-card">
+                        <span class="exp-data">2024 — PRESENTE</span>
+                        <h3>Estagiário Backend · Embraer</h3>
+                        <p>Desenvolvimento de APIs REST com Java e Spring Boot, focando em performance, segurança e boas
+                            práticas. Colaboração com times multidisciplinares e integração com AWS.</p>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-card">
+                        <span class="exp-data">2024 — 2025</span>
+                        <h3>Sistemas para Supermercados</h3>
+                        <p>Implantei soluções tecnológicas para melhorar processos internos, contribuindo diretamente
+                            para a expansão de unidades e aumento da produtividade.</p>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                            <span>Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJETOS -->
+                <div class="projetos">
+                    <h2 class="titulo">PROJETOS</h2>
+
+                    <div class="projeto-card">
+                        <a href="#" target="_blank" class="card-link">
+                            <div class="img-preview">
+                                <img src="images/ceprocom01.png" alt="Sistema de Doações">
+                            </div>
+                            <div class="conteudo-projeto">
+                                <h3>Sistema de Doações ↗</h3>
+                                <p>Site para ONG com cadastro de usuários, envio de e-mail, integração com banco de
+                                    dados e PIX via Mercado Pago.</p>
+                                <div class="tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>MySQL</span>
+                                    <span>Mercado Pago</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="projeto-card">
+                        <a href="https://github.com/seuuser/caixa-supermercado" target="_blank" class="card-link">
+                            <div class="img-preview">
+                                <img src="images/supermercado01.png" alt="Caixa de Supermercado">
+                            </div>
+                            <div class="conteudo-projeto">
+                                <h3>Sistema de Caixa ↗</h3>
+                                <p>Aplicação Java desktop com controle de vendas, contas do cliente e emissão de NFe e
+                                    NFCe.
+                                </p>
+                                <div class="tags">
+                                    <span>Java</span>
+                                    <span>JavaFX</span>
+                                    <span>MySQL</span>
+                                    <span>Power BI</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section class="contato">
+            <div class="interface">
+                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+
+                <form action="https://formsubmit.co/lucasperes1591@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="obrigado.html">
+
+                    <input type="text" name="nome" placeholder="Seu nome" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                    <input type="tel" name="telefone" id="telefone" placeholder="Seu celular">
+                    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>
+            Desenvolvido no <span class="destaque">Visual Studio Code</span>, com <span class="destaque">HTML</span>,
+            <span class="destaque">CSS</span> e <span class="destaque">JavaScript</span>. Backend em Formulário com
+            <span class="destaque">FormSubmit</span>. Design baseado na fonte <span class="destaque">Inter</span>.
+        </p>
+    </footer>
+
+</body>
+
+<script>
+    const telefoneInput = document.getElementById('telefone');
+
+    telefoneInput.addEventListener('input', function () {
+        let telefone = telefoneInput.value.replace(/\D/g, '');
+        telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2');
+        telefone = telefone.replace(/(\d{5})(\d{1,4})$/, '$1-$2');
+        telefoneInput.value = telefone;
+    });
+</script>
+
+
+
+<script>
+    function toggleOptions() {
+        const options = document.getElementById('cv-options');
+        options.classList.toggle('hidden');
+    }
+
+    // EFEITO SPOTLIGHT
+    const spotlight = document.getElementById("spotlight");
+
+    document.addEventListener("pointermove", (e) => {
+        const x = e.clientX + "px";
+        const y = e.clientY + "px";
+        spotlight.style.setProperty("--x", x);
+        spotlight.style.setProperty("--y", y);
+    });
+</script>
+
+
+<script>
+    function toggleOptions() {
+        const options = document.getElementById('cv-options');
+        options.classList.toggle('hidden');
+    }
+
+    function closeOptions() {
+        const options = document.getElementById('cv-options');
+        options.classList.add('hidden');
+    }
+
+    // Fecha ao clicar fora
+    document.addEventListener('click', function (event) {
+        const wrapper = document.querySelector('.cv-wrapper');
+        if (!wrapper.contains(event.target)) {
+            document.getElementById('cv-options').classList.add('hidden');
+        }
+    });
+</script>
+
+
+</html>

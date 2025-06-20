@@ -28,38 +28,40 @@
                 </ul>
             </nav>
 
-            <div class="btn-contato">
-                <a href="#contato">
-                    <button>Contato</button>
-                </a>
-            </div><!--btn-contato-->
+            <body id="topo">
 
-            <div class="btn-abrir-menu" id="btn-menu">
-                <a href="#">
-                    <img src="icons/abrir.svg" alt="Abrir Menu">
-                </a>
-            </div>
+                <div class="btn-contato">
+                    <a href="#contato">
+                        <button>Contato</button>
+                    </a>
+                </div><!--btn-contato-->
 
-
-            <div class="menu-mobile" id="menu-mobile">
-                <div class="btn-fechar">
+                <div class="btn-abrir-menu" id="btn-menu">
                     <a href="#">
-                        <img src="icons/fechar.svg" alt="Fechar menu">
+                        <img src="icons/abrir.svg" alt="Abrir Menu">
                     </a>
                 </div>
 
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#especialidades">Especialidades</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </nav>
 
-            </div><!--menu-mobile-->
-            <div class="overlay-menu" id="overlay-menu"></div>
+                <div class="menu-mobile" id="menu-mobile">
+                    <div class="btn-fechar">
+                        <a href="#">
+                            <img src="icons/fechar.svg" alt="Fechar menu">
+                        </a>
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#especialidades">Especialidades</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                        </ul>
+                    </nav>
+
+                </div><!--menu-mobile-->
+                <div class="overlay-menu" id="overlay-menu"></div>
         </div><!--Interface-->
     </header>
 
@@ -276,6 +278,11 @@
         </p>
     </footer>
 
+    <a href="#topo" class="btn-topo" aria-label="Voltar ao topo">
+        <img src="icons/seta 3.png" alt="Seta para cima" width="30" />
+    </a>
+
+
 </body>
 
 <script>
@@ -362,6 +369,17 @@
     });
 </script>
 
+<script>
+    const btnTopo = document.querySelector('.btn-topo');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btnTopo.style.display = 'block';
+        } else {
+            btnTopo.style.display = 'none';
+        }
+    });
+</script>
 
 
 </html>

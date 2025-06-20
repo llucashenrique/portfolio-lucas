@@ -15,21 +15,21 @@
     <header>
         <div class="interface">
             <div class="logo">
-                <a href="#">
+                <a href="index.html">
                     <img src="/images/logo2.png" alt="Logo Dev">
                 </a>
             </div><!--Logo-->
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Especialidades</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                 </ul>
             </nav>
 
             <div class="btn-contato">
-                <a href="#">
+                <a href="#contato">
                     <button>Contato</button>
                 </a>
             </div><!--btn-contato-->
@@ -50,11 +50,11 @@
 
                 <nav>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Especialidades</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Projetos</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </nav>
 
@@ -69,7 +69,7 @@
                 <div class="flex">
 
                     <div class="txt-topo-site">
-                        <h1>Lucas Lino</h1>
+                        <h1 id="inicio">Lucas Lino</h1>
                         <h3>Engenheiro Backend</h3>
                         <p>"Eu desenvolvo sistemas robustos focados em desempenho, segurança e integração perfeita."</p>
 
@@ -105,7 +105,7 @@
 
         <section class="especialidades">
             <div class="interface">
-                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <h2 class="titulo" id="especialidades">MINHAS <span>ESPECIALIDADES.</span></h2>
                 <div class="flex">
                     <div class="especialidades-box">
                         <img src="icons/JAVA.svg" alt="java" width="50">
@@ -122,7 +122,7 @@
                     </div><!--especialidades-box-->
 
                     <div class="especialidades-box">
-                        <img src="icons/AWS.svg" alt="java" width="50">
+                        <img src="icons/aws.svg" alt="java" width="50">
                         <h3>AWS</h3>
                         <p>Tenho experiência em serviços da AWS como EC2, S3 e RDS, utilizando a nuvem para deploy de
                             aplicações, armazenamento seguro e escalabilidade de sistemas."</p>
@@ -139,7 +139,7 @@
                     </div><!--img-sobre-->
 
                     <div class="txt-sobre">
-                        <h2>MUITO PRAZER, <span>SOU LUCAS LINO.<span></h2>
+                        <h2 id="sobre">MUITO PRAZER, <span>SOU LUCAS LINO.<span></h2>
                         <p>Sou um desenvolvedor backend apaixonado por transformar ideias em soluções funcionais. Tenho
                             experiência com Java, Spring Boot e AWS, sempre focando na performance, segurança e
                             escalabilidade das aplicações que construo. Valorizo boas práticas de código, versionamento
@@ -156,8 +156,8 @@
                                     src="icons/github-mark-white.png" alt="github" width="35"></a>
                             <a href="https://www.linkedin.com/in/lucas-linoo/" target="_blank"><img
                                     src="icons/linkedin.svg" alt="linkedin" width="45"></a>
-                            <a href="https://www.youtube.com/@Lucas-uv8wi" target="_blank"><img src="icons/youtube.svg"
-                                    alt="youtube" width="40"></a>
+                            <a href="https://www.youtube.com/@Lucas-uv8wi" target="_blank"><img src="icons/youtube.png"
+                                    alt="youtube" width="50"></a>
                         </div>
                     </div><!--txt-sobre-->
                 </div><!--sobre-->
@@ -169,7 +169,7 @@
 
                 <!-- EXPERIÊNCIA -->
                 <div class="experiencia">
-                    <h2 class="titulo">EXPERIÊNCIA</h2>
+                    <h2 class="titulo" id="projetos">EXPERIÊNCIA</h2>
 
                     <div class="exp-card">
                         <span class="exp-data">2024 — PRESENTE</span>
@@ -247,11 +247,10 @@
 
         <section class="contato">
             <div class="interface">
-                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+                <h2 class="titulo" id="contato">FALA <span>COMIGO.</span></h2>
 
-                <form action="https://formsubmit.co/lucasperes1591@gmail.com" method="POST">
+                <form action="https://formsubmit.co/lucasperes1591@gmail.com" method="POST" id="form-contato">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="obrigado.html">
 
                     <input type="text" name="nome" placeholder="Seu nome" required>
                     <input type="email" name="email" placeholder="Seu e-mail" required>
@@ -259,6 +258,12 @@
                     <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
                     <button type="submit">ENVIAR</button>
                 </form>
+
+                <!-- POP-UP -->
+                <div id="popup" class="popup hidden">
+                    <p id="popup-msg">Enviando...</p>
+                </div>
+
             </div>
         </section>
     </main>
@@ -323,6 +328,40 @@
         }
     });
 </script>
+
+<script>
+    const form = document.getElementById('form-contato');
+    const popup = document.getElementById('popup');
+    const popupMsg = document.getElementById('popup-msg');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // impede o envio padrão
+
+        popup.classList.remove('hidden');
+        popup.classList.add('show');
+        popupMsg.textContent = 'Enviando...';
+
+        // envia o formulário via JavaScript
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => {
+                popupMsg.textContent = 'Mensagem enviada com sucesso!';
+                form.reset();
+
+                setTimeout(() => {
+                    popup.classList.remove('show');
+                    popup.classList.add('hidden');
+                }, 4000);
+            })
+            .catch(error => {
+                popupMsg.textContent = 'Erro ao enviar mensagem.';
+            });
+    });
+</script>
+
 
 
 </html>

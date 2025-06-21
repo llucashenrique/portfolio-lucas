@@ -126,7 +126,7 @@ header .btn-contato button {
     padding: 10px 40px;
     font-size: 16px;
     font-weight: 600;
-    background-color: #6b9bd6;
+    background-color: #739ACA;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -135,7 +135,92 @@ header .btn-contato button {
 }
 
 header .btn-contato button:hover {
-    box-shadow: 0px 0px 8px #6b9bd6;
+    box-shadow: 0px 0px 8px #739ACA;
+}
+
+
+/* ESTILO TROCA IDIOMA */
+/* Esconde os inputs de forma segura */
+#checkbox,
+#checkbox-mobile {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Estilo do botão de idioma (desktop e mobile) */
+.switch {
+    width: 60px;
+    height: 30px;
+    background-color: #1E293B;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 3px;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 9999;
+    transition: background 0.3s ease-in-out;
+    margin-right: 40px
+}
+
+/* Bandeira dentro do botão */
+.switch::after {
+    content: "";
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 3px;
+    background-image: url('https://flagcdn.com/w40/br.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Quando marcado, mostra a bandeira dos EUA e desliza */
+#checkbox:checked+.switch::after,
+#checkbox-mobile:checked+.switch::after {
+    transform: translateX(30px);
+    background-image: url('https://flagcdn.com/w40/us.png');
+}
+
+.menu-switch-mobile {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 8%;
+    margin-top: 20px;
+}
+
+.menu-switch-mobile .switch {
+    width: 60px;
+    height: 30px;
+    background-color: #1E293B;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    margin: 0;
+}
+
+.menu-switch-mobile .switch::after {
+    content: "";
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 3px;
+    background-image: url('https://flagcdn.com/w40/br.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
 }
 
 /* ESTILO MENU MOBILE */
@@ -861,7 +946,7 @@ section.contato {
     }
 
     .btn-social a img {
-        width: 50px;
+        width: 45px;
         height: auto;
     }
 
@@ -876,6 +961,24 @@ section.contato {
 
     .btn-abrir-menu {
         display: block;
+    }
+
+    /* MENU LANGUAGE */
+
+
+    #checkbox-mobile,
+    #checkbox-mobile+.switch {
+        display: none;
+    }
+
+    #checkbox,
+    #checkbox+.switch {
+        display: none;
+    }
+
+    #checkbox-mobile,
+    #checkbox-mobile+.switch {
+        display: inline-block;
     }
 
 

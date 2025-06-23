@@ -152,4 +152,86 @@ if (btnFechar) {
         menuMobile.classList.remove('abrir-menu');
         overlay.classList.remove('ativo');
     });
+
+
+
+    const form = document.getElementById('form-contato');
+    const popup = document.getElementById('popup');
+    const popupMsg = document.getElementById('popup-message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const lang = typeof currentLang !== 'undefined' ? currentLang : 'pt';
+        const sending = lang === 'pt' ? 'Enviando...' : 'Sending...';
+        const success = lang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!';
+        const error = lang === 'pt' ? 'Erro ao enviar mensagem.' : 'Failed to send message.';
+
+        showPopup(sending);
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                showPopup(success);
+                form.reset();
+            } else {
+                showPopup(error);
+            }
+        }).catch(() => {
+            showPopup(error);
+        });
+    });
+
+    // POP PUP
+
+    function showPopup(message) {
+        popupMsg.textContent = message;
+        popup.classList.remove('hidden');
+        popup.classList.add('show');
+
+        setTimeout(() => {
+            popup.classList.remove('show');
+            popup.classList.add('hidden');
+        }, 3000);
+    }
+
+    // SWIPE
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    document.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+    }, false);
+
+    function handleSwipeGesture() {
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (swipeDistance < -80) {
+            // Swipe da direita para a esquerda: abrir menu com delay
+            setTimeout(() => {
+                menuMobile.classList.add('abrir-menu');
+                overlay.classList.add('ativo');
+            }, 100); // delay de 100ms
+        } else if (swipeDistance > 80) {
+            // Swipe da esquerda para a direita: fechar menu
+            menuMobile.classList.remove('abrir-menu');
+            overlay.classList.remove('ativo');
+        }
+    }
+
+
+
+
 }
+
+

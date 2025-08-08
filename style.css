@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-Bold.woff2') format('woff2');
+    src: url('/fonts/Inter-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
@@ -89,6 +89,8 @@ body {
 
 
 /* ESTILO DO HEADER */
+
+
 header {
     padding: 20px 4%;
 }
@@ -864,7 +866,7 @@ section.contato {
 
 
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1080px) {
 
     /* CLASSES GERAIS */
     .flex {
@@ -980,9 +982,42 @@ section.contato {
     #checkbox-mobile+.switch {
         display: inline-block;
     }
-
-
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Layout lado a lado */
+    .experiencia-projetos .interface {
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding: 0 40px;
+        /* 👈 espaçamento lateral */
+    }
+
+    .experiencia,
+    .projetos {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .exp-card,
+    .projeto-card {
+        margin: 0 0 20px 0;
+    }
+
+    .foto-perfil img {
+        width: 220px;
+        height: auto;
+    }
+
+    .foto-perfil {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+
 
 @media (max-width: 400px) {
     .projeto-card .card-link {
